@@ -640,9 +640,7 @@
           }
         };
 
-        if (!SCRIPT_URL || SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbykBl8qdmC35TAMdvQlHWJfmntNqfP44XsDTMdMCsFU_v1q9m5zAWwcsl84fzmiJIPz/exec")) {
-          throw new Error("Harap masukkan URL Web App Google Apps Script pada variabel SCRIPT_URL terlebih dahulu.");
-        }
+        
 
         // Send POST request to Google Apps Script (text/plain avoids CORS preflight issues)
         const response = await fetch(SCRIPT_URL, {
