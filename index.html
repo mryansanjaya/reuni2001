@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi Reuni 25 Tahun Angkatan 2001 - FEB UGM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+    .card-radio:checked + div { border-color: #1e3a8a; background-color: #eff6ff; box-shadow: 0 0 0 2px #1e3a8a; }
+  </style>
+</head>
+<body class="text-slate-800 pb-24">
+
+  <!-- Header Banner -->
+  <header class="bg-gradient-to-r from-blue-950 via-blue-900 to-slate-900 text-white py-8 px-4 shadow-md">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-5">
+        <img src="https://febugm.qualtrics.com/CP/Graphic.php?IM=IM_73uBHaDcGeRvgaP" alt="Logo Reuni" class="w-20 h-20 object-contain bg-white rounded-xl p-1.5 shadow">
+        <div>
+          <span class="inline-block bg-amber-400 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-1">25 Tahun Angkatan 2001</span>
+          <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Reuni Perak FEB UGM 2001</h1>
+          <p class="text-blue-200 text-sm mt-1">Sabtu, 2 Januari 2027 • 15.00 – 20.00 WIB • Kampus FEB UGM Yogyakarta</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-5xl mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <!-- Left Column: Form -->
+    <form id="reuniForm" onsubmit="handleSubmit(event)" class="lg:col-span-2 space-y-6">
+
+      <!-- SECTION 1: IDENTITAS -->
+      <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex items-center gap-3 mb-5 border-b pb-3">
+          <span class="w-7 h-7 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">1</span>
+          <h2 class="text-lg font-bold text-slate-900">Identitas Alumni</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="md:col-span-2">
+            <label class="block text-sm font-semibold mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+            <input type="text" id="namaLengkap" required placeholder="Sesuai nama saat kuliah / saat ini" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-blue-900 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">Nama Panggilan Akrab <span class="text-red-500">*</span></label>
+            <input type="text" id="namaPanggilan" required placeholder="Nama sapaan di kampus" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-blue-900 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">No. WhatsApp Aktif <span class="text-red-500">*</span></label>
+            <input type="tel" id="whatsapp" required placeholder="081xxxxxxxxx" pattern="[0-9+]{9,15}" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-blue-900 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">Alamat Email</label>
+            <input type="email" id="email" placeholder="nama@email.com" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:ring-2 focus:ring-blue-900 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1">Provinsi Domisili Saat Ini <span class="text-red-500">*</span></label>
+            <select id="domisili" required class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm bg-white focus:ring-2 focus:ring-blue-900 focus:outline-none">
+              <option value="">-- Pilih Provinsi --</option>
+            </select>
+          </div>
+        </div>
+
+        <details class="mt-4 bg-slate-50 rounded-xl p-3 border border-slate-200">
+          <summary class="text-sm font-medium text-slate-700 cursor-pointer select-none">+ Tambahkan Akun Media Sosial (Opsional)</summary>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 pt-2 border-t border-slate-200">
+            <input type="text" id="soc_ig" placeholder="Instagram (@username)" class="rounded-lg border border-slate-300 px-3 py-2 text-xs">
+            <input type="text" id="soc_fb" placeholder="Facebook" class="rounded-lg border border-slate-300 px-3 py-2 text-xs">
+            <input type="text" id="soc_x" placeholder="X / Twitter" class="rounded-lg border border-slate-300 px-3 py-2 text-xs">
+            <input type="text" id="soc_other" placeholder="Threads / LinkedIn / Lainnya" class="rounded-lg border border-slate-300 px-3 py-2 text-xs">
+          </div>
+        </details>
+      </section>
+
+      <!-- SECTION 2: KONFIRMASI KEHADIRAN -->
+      <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex items-center gap-3 mb-4 border-b pb-3">
+          <span class="w-7 h-7 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">2</span>
+          <h2 class="text-lg font-bold text-slate-900">Konfirmasi Kehadiran</h2>
+        </div>
+
+        <p class="text-xs text-slate-600 bg-blue-50 border border-blue-100 rounded-xl p-3 mb-4">
+          💡 <strong>Info Iuran:</strong> Iuran alumni hadir sebesar <strong>Rp 250.000</strong> (sudah termasuk konsumsi, merchandise, & kaos lengan pendek ukuran S–XL). Pendamping/keluarga dikenakan biaya konsumsi <strong>Rp 100.000/orang</strong>.
+        </p>
+
+        <label class="block text-sm font-semibold mb-2">Apakah Anda bisa hadir pada acara Reuni? <span class="text-red-500">*</span></label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="cursor-pointer">
+            <input type="radio" name="kehadiran" value="hadir" class="sr-only card-radio" checked onchange="updateState()">
+            <div class="p-4 rounded-xl border border-slate-200 transition flex items-start gap-3">
+              <span class="text-xl">🎉</span>
+              <div>
+                <div class="font-bold text-sm text-slate-900">Ya, Saya Hadir</div>
+                <div class="text-xs text-slate-500 mt-0.5">Iuran Rp 250.000 (Termasuk kaos & konsumsi)</div>
+              </div>
+            </div>
+          </label>
+          <label class="cursor-pointer">
+            <input type="radio" name="kehadiran" value="tidak" class="sr-only card-radio" onchange="updateState()">
+            <div class="p-4 rounded-xl border border-slate-200 transition flex items-start gap-3">
+              <span class="text-xl">📦</span>
+              <div>
+                <div class="font-bold text-sm text-slate-900">Belum Bisa Hadir</div>
+                <div class="text-xs text-slate-500 mt-0.5">Tetap bisa pesan kaos alumni / berdonasi</div>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <!-- If Attending -->
+        <div id="panelPendamping" class="mt-5 pt-4 border-t border-slate-100">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <label class="block text-sm font-semibold">Membawa Pendamping / Anggota Keluarga?</label>
+              <p class="text-xs text-slate-500">Tambahan iuran konsumsi Rp 100.000 per orang</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="adjustCompanion(-1)" class="w-9 h-9 rounded-lg border border-slate-300 bg-slate-50 hover:bg-slate-100 font-bold text-lg flex items-center justify-center">−</button>
+              <input type="number" id="jumlahPendamping" value="0" min="0" max="9" readonly class="w-14 text-center font-bold text-sm border border-slate-200 rounded-lg py-1.5 bg-white">
+              <button type="button" onclick="adjustCompanion(1)" class="w-9 h-9 rounded-lg border border-slate-300 bg-slate-50 hover:bg-slate-100 font-bold text-lg flex items-center justify-center">+</button>
+              <span class="text-xs text-slate-600 font-medium ml-1">Orang</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- If Not Attending -->
+        <div id="panelTidakHadirOpsi" class="mt-5 pt-4 border-t border-slate-100 hidden">
+          <label class="block text-sm font-semibold mb-2">Apakah Anda ingin memesan Kaos Reuni meskipun tidak hadir?</label>
+          <p class="text-xs text-slate-500 mb-3">Harga dasar kaos Rp 80.000 (Lengan pendek S–XL).</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="cursor-pointer">
+              <input type="radio" name="pesanKaosTidakHadir" value="ya" class="sr-only card-radio" checked onchange="updateState()">
+              <div class="p-3 rounded-xl border border-slate-200 text-sm font-semibold text-center">👕 Ya, Saya Ingin Pesan Kaos</div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="pesanKaosTidakHadir" value="tidak" class="sr-only card-radio" onchange="updateState()">
+              <div class="p-3 rounded-xl border border-slate-200 text-sm font-semibold text-center">🙏 Tidak Pesan Kaos</div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: PEMILIHAN KAOS -->
+      <section id="sectionKaos" class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex items-center justify-between mb-4 border-b pb-3">
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">3</span>
+            <h2 class="text-lg font-bold text-slate-900">Pilihan Kaos Reuni</h2>
+          </div>
+          <button type="button" onclick="toggleModal('modalSizeChart')" class="text-xs font-semibold text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-lg border border-blue-200">
+            📏 Lihat Desain & Tabel Ukuran
+          </button>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-900 mb-3">Kaos Utama Anda (Alumni)</div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Model Lengan</label>
+              <select id="kaosUtamaLengan" onchange="updateState()" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white">
+                <option value="pendek">Lengan Pendek (+Rp 0)</option>
+                <option value="panjang">Lengan Panjang (+Rp 20.000)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">Ukuran Kaos</label>
+              <select id="kaosUtamaUkuran" onchange="updateState()" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm bg-white">
+                <option value="S">S (Standar)</option>
+                <option value="M">M (Standar)</option>
+                <option value="L" selected>L (Standar)</option>
+                <option value="XL">XL (Standar)</option>
+                <option value="2XL">2XL (+Rp 10.000)</option>
+                <option value="3XL">3XL (+Rp 20.000)</option>
+                <option value="4XL">4XL (+Rp 30.000)</option>
+                <option value="5XL">5XL (+Rp 40.000)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <h3 class="text-sm font-bold text-slate-800">Pesan Kaos Tambahan (Opsional)</h3>
+              <p class="text-xs text-slate-500">Untuk pendamping/keluarga atau koleksi tambahan (Harga dasar Rp 80.000/pcs)</p>
+            </div>
+            <button type="button" onclick="addExtraShirt()" class="text-xs font-bold bg-slate-900 text-white px-3 py-2 rounded-xl hover:bg-slate-800 transition">
+              + Tambah Kaos
+            </button>
+          </div>
+
+          <div id="extraShirtsContainer" class="space-y-2.5 mt-3"></div>
+
+          <div id="shippingBlock" class="mt-4 pt-4 border-t border-slate-200 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="md:col-span-2">
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Alamat Lengkap Pengiriman Kaos <span class="text-red-500">*</span></label>
+                <textarea id="alamatKirim" rows="2" placeholder="Nama jalan, nomor rumah, RT/RW, Kelurahan, Kecamatan, Kota, Kode Pos" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm"></textarea>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Tambahan Ongkos Kirim (Rp)</label>
+                <input type="number" id="ongkirInput" value="0" min="0" step="1000" oninput="updateState()" class="w-full rounded-xl border border-slate-300 px-3 py-2 text-sm">
+              </div>
+              <div class="flex items-end">
+                <a href="https://berdu.id/cek-ongkir" target="_blank" class="text-xs text-blue-700 hover:underline font-medium mb-2 inline-block">
+                  🔗 Cek estimasi ongkir dari Yogyakarta (berdu.id/cek-ongkir) ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: DONASI -->
+      <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex items-center gap-3 mb-4 border-b pb-3">
+          <span class="w-7 h-7 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">4</span>
+          <h2 class="text-lg font-bold text-slate-900">Donasi Kegiatan Reuni (Opsional)</h2>
+        </div>
+
+        <label class="block text-xs font-semibold text-slate-600 mb-2">Pilih Paket Donasi Tunai:</label>
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 mb-4">
+          <button type="button" onclick="setDonationPreset(0)" id="donBtn_0" class="don-btn py-2.5 px-3 rounded-xl border text-xs font-bold border-blue-900 bg-blue-50 text-blue-900">Tidak Ada</button>
+          <button type="button" onclick="setDonationPreset(1000000)" id="donBtn_1000000" class="don-btn py-2.5 px-3 rounded-xl border border-slate-200 text-xs font-semibold hover:bg-slate-50">Rp 1 Juta</button>
+          <button type="button" onclick="setDonationPreset(5000000)" id="donBtn_5000000" class="don-btn py-2.5 px-3 rounded-xl border border-slate-200 text-xs font-semibold hover:bg-slate-50">Rp 5 Juta</button>
+          <button type="button" onclick="setDonationPreset(10000000)" id="donBtn_10000000" class="don-btn py-2.5 px-3 rounded-xl border border-slate-200 text-xs font-semibold hover:bg-slate-50">Rp 10 Juta</button>
+          <button type="button" onclick="setDonationPreset('custom')" id="donBtn_custom" class="don-btn py-2.5 px-3 rounded-xl border border-slate-200 text-xs font-semibold hover:bg-slate-50 col-span-2 sm:col-span-1">Nominal Lain</button>
+        </div>
+
+        <div id="customDonationBox" class="hidden mb-4">
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Masukkan Nominal Donasi (Rp) — angka saja tanpa titik/koma</label>
+          <input type="number" id="customDonationInput" value="0" min="0" step="50000" oninput="updateState()" placeholder="Contoh: 500000" class="w-full sm:w-64 rounded-xl border border-slate-300 px-3.5 py-2 text-sm">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Donasi Bukan Uang / Sponsorship / Doorprize (Opsional)</label>
+          <input type="text" id="donasiBarang" placeholder="Contoh: Voucher menginap, produk usaha, doorprize elektronik, dll." class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm">
+        </div>
+      </section>
+
+      <!-- SECTION 5: KENANGAN & BUKTI TRANSFER -->
+      <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex items-center gap-3 mb-4 border-b pb-3">
+          <span class="w-7 h-7 rounded-full bg-blue-900 text-white flex items-center justify-center text-sm font-bold">5</span>
+          <h2 class="text-lg font-bold text-slate-900">Bukti Pembayaran & Memori Kuliah</h2>
+        </div>
+
+        <div id="uploadBuktiBlock" class="mb-5 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+          <label class="block text-sm font-bold text-slate-900 mb-1">Unggah Bukti Transfer <span class="text-red-500">*</span></label>
+          <p class="text-xs text-slate-600 mb-3">Mohon cantumkan <strong>Nama Lengkap Alumni</strong> pada berita transfer (Format: JPG/PNG/PDF, Maks 5MB).</p>
+          <input type="file" id="buktiTransfer" accept="image/*,.pdf" required class="block w-full text-xs text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-800">
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold mb-1">Usulan Nama untuk Sesi "In Memoriam & Doa Bersama" (Opsional)</label>
+            <input type="text" id="inMemoriam" placeholder="Sebutkan nama rekan angkatan 2001 yang telah berpulang" class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1">Unggah Foto Kenangan Masa Kuliah (Opsional)</label>
+            <p class="text-xs text-emerald-700 font-medium mb-2">🎁 Dapatkan hadiah menarik bagi yang mengunggah foto kenangan semasa kuliah!</p>
+            <input type="file" id="fotoKenangan" accept="image/*" multiple class="block w-full text-xs text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-slate-200 file:text-slate-800 hover:file:bg-slate-300">
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold mb-1">Pesan / Masukan untuk Panitia (Opsional)</label>
+            <textarea id="pesanPanitia" rows="2" placeholder="Tulis pesan, kesan, atau catatan khusus (alergi makanan, dll.)" class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <button type="submit" id="submitBtn" class="w-full bg-blue-900 hover:bg-blue-800 disabled:bg-slate-400 text-white font-bold py-4 rounded-2xl shadow-lg transition text-base flex items-center justify-center gap-2">
+        <span>Kirim Pendaftaran Reuni 2001</span>
+      </button>
+    </form>
+
+    <!-- Right Column: Sticky Live Receipt -->
+    <aside class="lg:col-span-1">
+      <div class="sticky top-6 bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
+        <div class="bg-slate-900 text-white p-4">
+          <h3 class="font-bold text-base">Ringkasan Rincian Pembayaran</h3>
+          <p class="text-xs text-slate-400">Otomatis dihitung sesuai pilihan Anda</p>
+        </div>
+
+        <div class="p-5 space-y-3 text-sm">
+          <div id="receiptLines" class="space-y-2.5 border-b border-slate-200 pb-4 text-slate-700"></div>
+
+          <div class="flex items-center justify-between pt-1">
+            <span class="font-bold text-slate-900">Total Pembayaran</span>
+            <div class="flex items-center gap-2">
+              <span id="grandTotalText" class="text-xl font-extrabold text-blue-900">Rp 250.000</span>
+              <button type="button" onclick="copyText(currentGrandTotal, 'Nominal disalin!')" class="text-xs bg-slate-100 hover:bg-slate-200 px-2 py-1 rounded font-semibold text-slate-700">Salin</button>
+            </div>
+          </div>
+
+          <div id="bankBox" class="mt-4 bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs space-y-2">
+            <div class="font-bold text-slate-800 uppercase tracking-wider">Rekening Tujuan Transfer</div>
+            <div class="flex items-center justify-between bg-white p-2.5 rounded-lg border border-slate-200">
+              <div>
+                <div class="font-bold text-blue-900 text-sm">Bank BRI</div>
+                <div class="font-mono font-bold text-slate-900 text-sm tracking-tight">0206-01-011534-56-9</div>
+              </div>
+              <button type="button" onclick="copyText('020601011534569', 'Nomor rekening BRI disalin!')" class="bg-blue-900 text-white px-2.5 py-1.5 rounded-lg font-semibold hover:bg-blue-800">
+                Salin No. Rek
+              </button>
+            </div>
+            <div class="text-slate-600 leading-relaxed">
+              a.n. <strong>Nungky Indrianti dan Novrita Endah Putria</strong><br>
+              <span class="text-amber-700 font-medium">*Cantumkan nama lengkap alumni pada berita transfer.</span>
+            </div>
+          </div>
+
+          <div id="toastMsg" class="hidden text-center text-xs font-semibold text-emerald-700 bg-emerald-50 py-1.5 rounded-lg border border-emerald-200"></div>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Modal: Size Chart -->
+  <div id="modalSizeChart" class="fixed inset-0 bg-slate-900/60 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-xl">
+      <div class="flex items-center justify-between border-b pb-3 mb-4">
+        <h3 class="font-bold text-lg">Desain & Tabel Ukuran Kaos Reuni</h3>
+        <button type="button" onclick="toggleModal('modalSizeChart')" class="text-slate-500 hover:text-slate-800 font-bold text-xl">✕</button>
+      </div>
+      <div class="space-y-4 flex flex-col items-center">
+        <img src="https://febugm.qualtrics.com/CP/Graphic.php?IM=IM_t4NGZ5CsY4i9cXL" alt="Desain Kaos 1" class="rounded-lg border max-w-full">
+        <img src="https://febugm.qualtrics.com/CP/Graphic.php?IM=IM_44Qz4PwMeeHzpWT" alt="Desain Kaos 2" class="rounded-lg border max-w-full">
+        <img src="https://febugm.qualtrics.com/CP/Graphic.php?IM=IM_l2Zcv3g91TcAqZT" alt="Size Chart" class="rounded-lg border max-w-sm">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Success -->
+  <div id="modalSuccess" class="fixed inset-0 bg-slate-900/60 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-xl text-center space-y-4">
+      <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">✓</div>
+      <h3 class="font-bold text-xl text-slate-900">Registrasi Terkirim!</h3>
+      <p class="text-sm text-slate-600">Data pendaftaran dan dokumen Anda telah tersimpan di sistem Panitia Reuni 2001 FEB UGM. Sampai jumpa di Yogyakarta!</p>
+      <div class="pt-2">
+        <button type="button" onclick="window.location.reload()" class="bg-blue-900 text-white text-xs font-bold px-6 py-2.5 rounded-xl">Selesai</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW
+    // =========================================================================
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbykBl8qdmC35TAMdvQlHWJfmntNqfP44XsDTMdMCsFU_v1q9m5zAWwcsl84fzmiJIPz/exec";
+
+    const PROVINCES = [
+      "Aceh", "Sumatera Utara", "Sumatera Barat", "Riau", "Kepulauan Riau", "Jambi", "Sumatera Selatan",
+      "Kepulauan Bangka Belitung", "Bengkulu", "Lampung", "DKI Jakarta", "Jawa Barat", "Banten",
+      "Jawa Tengah", "DI Yogyakarta", "Jawa Timur", "Bali", "Nusa Tenggara Barat", "Nusa Tenggara Timur",
+      "Kalimantan Barat", "Kalimantan Tengah", "Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Utara",
+      "Sulawesi Utara", "Gorontalo", "Sulawesi Tengah", "Sulawesi Barat", "Sulawesi Selatan", "Sulawesi Tenggara",
+      "Maluku", "Maluku Utara", "Papua", "Papua Barat", "Papua Barat Daya", "Papua Selatan", "Papua Tengah", "Papua Pegunungan"
+    ];
+
+    const SIZE_SURCHARGE = { "S": 0, "M": 0, "L": 0, "XL": 0, "2XL": 10000, "3XL": 20000, "4XL": 30000, "5XL": 40000 };
+    
+    let donationMode = 0;
+    let extraShirts = [];
+    let currentGrandTotal = 250000;
+
+    const domSelect = document.getElementById('domisili');
+    PROVINCES.forEach(p => {
+      const opt = document.createElement('option');
+      opt.value = p;
+      opt.textContent = p;
+      domSelect.appendChild(opt);
+    });
+
+    function formatIDR(num) {
+      return 'Rp ' + Number(num || 0).toLocaleString('id-ID');
+    }
+
+    function adjustCompanion(delta) {
+      const el = document.getElementById('jumlahPendamping');
+      let val = parseInt(el.value || '0', 10) + delta;
+      el.value = Math.max(0, Math.min(9, val));
+      updateState();
+    }
+
+    function setDonationPreset(val) {
+      donationMode = val;
+      document.querySelectorAll('.don-btn').forEach(btn => {
+        btn.className = "don-btn py-2.5 px-3 rounded-xl border border-slate-200 text-xs font-semibold hover:bg-slate-50";
+      });
+      const activeBtn = document.getElementById('donBtn_' + val);
+      if (activeBtn) {
+        activeBtn.className = "don-btn py-2.5 px-3 rounded-xl border text-xs font-bold border-blue-900 bg-blue-50 text-blue-900";
+      }
+      document.getElementById('customDonationBox').classList.toggle('hidden', val !== 'custom');
+      if (val === 'custom') document.getElementById('customDonationInput').focus();
+      updateState();
+    }
+
+    function addExtraShirt() {
+      extraShirts.push({ id: Date.now(), sleeve: 'pendek', size: 'L', qty: 1 });
+      renderExtraShirts();
+      updateState();
+    }
+
+    function removeExtraShirt(id) {
+      extraShirts = extraShirts.filter(item => item.id !== id);
+      renderExtraShirts();
+      updateState();
+    }
+
+    function updateExtraShirtItem(id, field, value) {
+      const item = extraShirts.find(i => i.id === id);
+      if (item) {
+        item[field] = field === 'qty' ? Math.max(1, parseInt(value || '1', 10)) : value;
+        updateState();
+      }
+    }
+
+    function renderExtraShirts() {
+      const container = document.getElementById('extraShirtsContainer');
+      if (extraShirts.length === 0) {
+        container.innerHTML = `<div class="text-xs text-slate-400 italic">Belum ada kaos tambahan yang dipilih.</div>`;
+        return;
+      }
+      container.innerHTML = extraShirts.map((item, idx) => `
+        <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs">
+          <span class="font-bold text-slate-700">#${idx + 1}</span>
+          <select onchange="updateExtraShirtItem(${item.id}, 'sleeve', this.value)" class="rounded-lg border border-slate-300 px-2.5 py-1.5 bg-white flex-1">
+            <option value="pendek" ${item.sleeve === 'pendek' ? 'selected' : ''}>Lengan Pendek (Rp 80rb)</option>
+            <option value="panjang" ${item.sleeve === 'panjang' ? 'selected' : ''}>Lengan Panjang (Rp 100rb)</option>
+          </select>
+          <select onchange="updateExtraShirtItem(${item.id}, 'size', this.value)" class="rounded-lg border border-slate-300 px-2.5 py-1.5 bg-white w-28">
+            ${Object.keys(SIZE_SURCHARGE).map(s => `<option value="${s}" ${item.size === s ? 'selected' : ''}>Size ${s}${SIZE_SURCHARGE[s] ? ' (+' + (SIZE_SURCHARGE[s]/1000) + 'rb)' : ''}</option>`).join('')}
+          </select>
+          <div class="flex items-center gap-1">
+            <span class="text-slate-500">Qty:</span>
+            <input type="number" min="1" max="20" value="${item.qty}" onchange="updateExtraShirtItem(${item.id}, 'qty', this.value)" class="w-14 rounded-lg border border-slate-300 px-2 py-1 text-center font-bold bg-white">
+          </div>
+          <button type="button" onclick="removeExtraShirt(${item.id})" class="text-red-500 hover:text-red-700 font-bold px-2 py-1">Hapus</button>
+        </div>
+      `).join('');
+    }
+
+    function updateState() {
+      const isAttending = document.querySelector('input[name="kehadiran"]:checked').value === 'hadir';
+      const wantsShirtWhenAbsent = document.querySelector('input[name="pesanKaosTidakHadir"]:checked').value === 'ya';
+
+      document.getElementById('panelPendamping').classList.toggle('hidden', !isAttending);
+      document.getElementById('panelTidakHadirOpsi').classList.toggle('hidden', isAttending);
+
+      const showShirtSection = isAttending || wantsShirtWhenAbsent;
+      document.getElementById('sectionKaos').classList.toggle('hidden', !showShirtSection);
+
+      const needsShipping = !isAttending && wantsShirtWhenAbsent;
+      document.getElementById('shippingBlock').classList.toggle('hidden', !needsShipping);
+      document.getElementById('alamatKirim').required = needsShipping;
+
+      let lines = [];
+      let total = 0;
+
+      const mainSleeve = document.getElementById('kaosUtamaLengan').value;
+      const mainSize = document.getElementById('kaosUtamaUkuran').value;
+      const sleeveSurcharge = mainSleeve === 'panjang' ? 20000 : 0;
+      const sizeSurcharge = SIZE_SURCHARGE[mainSize] || 0;
+
+      if (isAttending) {
+        total += 250000;
+        lines.push({ label: 'Iuran Alumni (Hadir)', amount: 250000 });
+        if (sleeveSurcharge + sizeSurcharge > 0) {
+          total += sleeveSurcharge + sizeSurcharge;
+          lines.push({ label: `Upgrade Kaos Utama (${mainSleeve === 'panjang' ? 'Panjang' : 'Pendek'}, ${mainSize})`, amount: sleeveSurcharge + sizeSurcharge });
+        } else {
+          lines.push({ label: `Kaos Utama (Pendek, ${mainSize})`, amount: 0, note: 'Termasuk' });
+        }
+
+        const companions = parseInt(document.getElementById('jumlahPendamping').value || '0', 10);
+        if (companions > 0) {
+          const compCost = companions * 100000;
+          total += compCost;
+          lines.push({ label: `Iuran Pendamping (${companions} org × Rp 100rb)`, amount: compCost });
+        }
+      } else if (wantsShirtWhenAbsent) {
+        const mainShirtCost = 80000 + sleeveSurcharge + sizeSurcharge;
+        total += mainShirtCost;
+        lines.push({ label: `Kaos Alumni (${mainSleeve === 'panjang' ? 'Panjang' : 'Pendek'}, ${mainSize})`, amount: mainShirtCost });
+      } else {
+        lines.push({ label: 'Konfirmasi Tidak Hadir (Tanpa Kaos)', amount: 0 });
+      }
+
+      if (showShirtSection && extraShirts.length > 0) {
+        extraShirts.forEach((item, idx) => {
+          const unitPrice = 80000 + (item.sleeve === 'panjang' ? 20000 : 0) + (SIZE_SURCHARGE[item.size] || 0);
+          const sub = unitPrice * item.qty;
+          total += sub;
+          lines.push({ label: `Kaos Tambahan #${idx + 1} (${item.sleeve}, ${item.size} × ${item.qty})`, amount: sub });
+        });
+      }
+
+      if (needsShipping) {
+        const ongkir = Math.max(0, parseInt(document.getElementById('ongkirInput').value || '0', 10));
+        if (ongkir > 0) {
+          total += ongkir;
+          lines.push({ label: 'Ongkos Kirim Kaos', amount: ongkir });
+        }
+      }
+
+      let donationAmount = donationMode === 'custom'
+        ? Math.max(0, parseInt(document.getElementById('customDonationInput').value || '0', 10))
+        : (parseInt(donationMode, 10) || 0);
+
+      if (donationAmount > 0) {
+        total += donationAmount;
+        lines.push({ label: 'Donasi Tunai Reuni', amount: donationAmount });
+      }
+
+      currentGrandTotal = total;
+
+      document.getElementById('receiptLines').innerHTML = lines.map(l => `
+        <div class="flex justify-between items-start gap-2">
+          <span class="text-xs text-slate-600">${l.label}</span>
+          <span class="text-xs font-semibold text-slate-900 whitespace-nowrap">${l.note ? l.note : formatIDR(l.amount)}</span>
+        </div>
+      `).join('');
+
+      document.getElementById('grandTotalText').textContent = formatIDR(total);
+
+      const requireTransfer = total > 0;
+      document.getElementById('uploadBuktiBlock').classList.toggle('hidden', !requireTransfer);
+      document.getElementById('bankBox').classList.toggle('hidden', !requireTransfer);
+      document.getElementById('buktiTransfer').required = requireTransfer;
+    }
+
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(String(text));
+      const toast = document.getElementById('toastMsg');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 2500);
+    }
+
+    function toggleModal(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+      el.classList.toggle('flex');
+    }
+
+    // Helper: Convert File object to Base64 object for Apps Script
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const base64String = reader.result.split(',')[1];
+          resolve({
+            name: file.name,
+            mimeType: file.type || 'application/octet-stream',
+            base64: base64String
+          });
+        };
+        reader.onerror = error => reject(error);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const originalBtnHTML = btn.innerHTML;
+
+      try {
+        btn.disabled = true;
+        btn.innerHTML = `<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg> <span>Mengunggah Data & Dokumen...</span>`;
+
+        const isAttending = document.querySelector('input[name="kehadiran"]:checked').value === 'hadir';
+        const wantsShirtWhenAbsent = document.querySelector('input[name="pesanKaosTidakHadir"]:checked').value === 'ya';
+
+        // Process Proof of Transfer file
+        let buktiFileObj = null;
+        const buktiInput = document.getElementById('buktiTransfer');
+        if (currentGrandTotal > 0 && buktiInput.files.length > 0) {
+          buktiFileObj = await fileToBase64(buktiInput.files[0]);
+        }
+
+        // Process College Memory Photos (up to 5 files)
+        let kenanganFilesArr = [];
+        const kenanganInput = document.getElementById('fotoKenangan');
+        if (kenanganInput.files.length > 0) {
+          const filesToProcess = Array.from(kenanganInput.files).slice(0, 5);
+          for (const f of filesToProcess) {
+            kenanganFilesArr.push(await fileToBase64(f));
+          }
+        }
+
+        const payload = {
+          timestamp: new Date().toISOString(),
+          identitas: {
+            nama_lengkap: document.getElementById('namaLengkap').value.trim(),
+            nama_panggilan: document.getElementById('namaPanggilan').value.trim(),
+            whatsapp: document.getElementById('whatsapp').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            domisili: document.getElementById('domisili').value,
+            sosmed: {
+              instagram: document.getElementById('soc_ig').value.trim(),
+              facebook: document.getElementById('soc_fb').value.trim(),
+              twitter_x: document.getElementById('soc_x').value.trim(),
+              lainnya: document.getElementById('soc_other').value.trim()
+            }
+          },
+          kehadiran: {
+            hadir: isAttending,
+            jumlah_pendamping: isAttending ? parseInt(document.getElementById('jumlahPendamping').value || '0', 10) : 0
+          },
+          kaos: (isAttending || wantsShirtWhenAbsent) ? {
+            kaos_utama: {
+              lengan: document.getElementById('kaosUtamaLengan').value,
+              ukuran: document.getElementById('kaosUtamaUkuran').value
+            },
+            kaos_tambahan: extraShirts,
+            alamat_pengiriman: (!isAttending && wantsShirtWhenAbsent) ? document.getElementById('alamatKirim').value.trim() : null,
+            ongkir: (!isAttending && wantsShirtWhenAbsent) ? parseInt(document.getElementById('ongkirInput').value || '0', 10) : 0
+          } : null,
+          donasi: {
+            nominal_uang: donationMode === 'custom' ? parseInt(document.getElementById('customDonationInput').value || '0', 10) : donationMode,
+            donasi_barang: document.getElementById('donasiBarang').value.trim()
+          },
+          memori_dan_pesan: {
+            usulan_in_memoriam: document.getElementById('inMemoriam').value.trim(),
+            pesan_panitia: document.getElementById('pesanPanitia').value.trim()
+          },
+          total_pembayaran_rp: currentGrandTotal,
+          files: {
+            bukti_transfer: buktiFileObj,
+            foto_kenangan: kenanganFilesArr
+          }
+        };
+
+        if (!SCRIPT_URL || SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbykBl8qdmC35TAMdvQlHWJfmntNqfP44XsDTMdMCsFU_v1q9m5zAWwcsl84fzmiJIPz/exec")) {
+          throw new Error("Harap masukkan URL Web App Google Apps Script pada variabel SCRIPT_URL terlebih dahulu.");
+        }
+
+        // Send POST request to Google Apps Script (text/plain avoids CORS preflight issues)
+        const response = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        if (result.status === "success") {
+          toggleModal('modalSuccess');
+        } else {
+          throw new Error(result.message || "Gagal menyimpan data ke server.");
+        }
+
+      } catch (err) {
+        alert("Terjadi kesalahan saat mengirim pendaftaran:\n" + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHTML;
+      }
+    }
+
+    renderExtraShirts();
+    updateState();
+  </script>
+</body>
+</html>
