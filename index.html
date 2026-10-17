@@ -250,10 +250,12 @@
         </div>
 
         <div id="uploadBuktiBlock" class="mb-5 p-4 bg-amber-50 border border-amber-200 rounded-xl">
-          <label class="block text-sm font-bold text-slate-900 mb-1">Unggah Bukti Transfer <span class="text-red-500">*</span></label>
+          <label class="block text-sm font-bold text-slate-900 mb-1">Unggah Bukti Transfer (Opsional / Bisa Menyusul)</label>
           <p class="text-xs text-slate-600 mb-3">Mohon cantumkan <strong>Nama Lengkap Alumni</strong> pada berita transfer (Format: JPG/PNG/PDF, Maks 5MB).</p>
-          <input type="file" id="buktiTransfer" accept="image/*,.pdf" required class="block w-full text-xs text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-800">
+          <!-- Removed "required" from the input below -->
+          <input type="file" id="buktiTransfer" accept="image/*,.pdf" class="block w-full text-xs text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-800">
         </div>
+
 
         <div class="space-y-4">
           <div>
@@ -534,7 +536,8 @@
       const requireTransfer = total > 0;
       document.getElementById('uploadBuktiBlock').classList.toggle('hidden', !requireTransfer);
       document.getElementById('bankBox').classList.toggle('hidden', !requireTransfer);
-      document.getElementById('buktiTransfer').required = requireTransfer;
+      // Change this line to false (or delete it) so it is never forced:
+      document.getElementById('buktiTransfer').required = false;
     }
 
     function copyText(text, msg) {
